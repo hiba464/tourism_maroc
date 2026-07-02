@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morocco Travel Guide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+  body{
+    background:#f8fafc;
+    color:#0f172a;
+}
+
+    body::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: #2563eb;
+      border-radius: 20px;
+    }
+
+    .navbar{
+
+  position:fixed;
+  width:90%;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,.08);
+
+  backdrop-filter:
+  blur(18px);
+
+  border:
+  1px solid
+  rgba(255,255,255,.15);
+
+  z-index:9999;
+}
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #60a5fa;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+  color:#0f172a;
+  text-decoration:none;
+  transition:.3s;
+  font-weight:500;
+}
+
+    .nav-links a:hover {
+      color: #60a5fa;
+    }
+
+
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    background:#60a5fa;
+
+    left:0;
+    bottom:-5px;
+
+    transition:.4s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+
+.badge{
+
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    background:#2563eb;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+}
+
+.language-select,
+.currency-select{
+  background:white;
+  color:#0f172a;
+  border:1px solid #cbd5e1;
+  padding:10px;
+  border-radius:10px;
+  outline:none;
+}
+
+    
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    rgba(2,6,23,.65),
+    rgba(2,6,23,.45)
+  ),
+  url("chefchaoune.jpeg");
+ animation: zoomHero 15s linear infinite alternate;
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+    
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  border-radius:50%;
+  background:#2563eb30;
+  filter:blur(120px);
+  right:-100px;
+  top:-100px;
+}
+
+   .hero-content{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:30px;
+  padding:50px;
+  max-width:800px;
+  max-width:700px;
+  z-index:2;
+  animation:heroEntrance 1.2s ease;
+}
+
+.hero h1{
+  font-size:6rem;
+  font-weight:800;
+  margin-bottom:20px;
+
+  background:linear-gradient(
+    90deg,
+    #ffffff,
+    #60a5fa
+  );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+
+.hero p{
+  font-size:1.2rem;
+  color:white;
+  margin-bottom:35px;
+}
+
+.hero button{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.hero button::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+    height:100%;
+
+    left:0;
+    top:0;
+
+    background:rgba(255,255,255,.2);
+
+    transition:.5s;
+
+}
+
+.hero button:hover::before{
+
+    width:100%;
+
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at center,
+    rgba(96,165,250,.25),
+    transparent 60%
+  );
+
+  pointer-events:none;
+}
+
+
+
+    .hero button {
+      padding: 15px 40px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 50px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.4s;
+      box-shadow: 0 10px 30px rgba(37,99,235,0.4);
+    }
+
+    .hero button:hover {
+      transform: translateY(-5px) scale(1.05);
+      background: #1d4ed8;
+    }
+
+    @keyframes zoomHero{
+
+  from{
+    background-size:100%;
+  }
+
+  to{
+    background-size:110%;
+  }
+
+}
+
+    .section {
+      padding: 120px 80px;
+    }
+
+    .section-title{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:60px;
+    font-weight:700;
+
+    background: linear-gradient(
+        90deg,
+        #60a5fa,
+        #38bdf8
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+
+  background:white;
+  color:#0f172a;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  position:relative;
+
+  cursor:pointer;
+
+  transition:.4s;
+
+  box-shadow:
+  0 8px 20px rgba(0,0,0,.08);
+
+  max-width:280px;
+
+  margin:auto;
+}
+
+.card:hover{
+
+  transform:
+  translateY(-8px);
+
+  box-shadow:
+  0 15px 35px rgba(37,99,235,.18);
+}
+
+.card img{
+
+  width:100%;
+
+  height:170px;
+
+  object-fit:cover;
+
+  transition:.5s;
+}
+
+.card:hover img{
+
+  transform:scale(1.05);
+}
+
+.card-content{
+
+  padding:15px;
+}
+
+.card h3{
+
+  font-size:18px;
+
+  margin-bottom:8px;
+}
+
+.card p{
+
+    height: 60px;
+
+    overflow: hidden;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #64748b;
+}
+
+
+
+    .favorite {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 45px;
+      height: 45px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      cursor: pointer;
+      transition: 0.4s;
+      backdrop-filter: blur(8px);
+        z-index:9999;
+
+    }
+
+    .favorite.active{
+    background:#ef4444;
+    color:white;
+    display:flex;
+    opacity:1;
+    visibility:visible;
+}
+
+@keyframes pulse{
+
+  0%{
+    transform:scale(.8);
+  }
+
+  50%{
+    transform:scale(1.3);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
+    
+
+    .price-box {
+      background: #0f172a;
+      padding: 40px;
+      border-radius: 25px;
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+
+    .price-box input {
+      width: 100%;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      font-size: 18px;
+    }
+
+    .price-box button {
+      margin-top: 20px;
+      padding: 15px 35px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .price-box button:hover {
+      transform: scale(1.05);
+    }
+
+    .result {
+      margin-top: 25px;
+      font-size: 25px;
+      color: #60a5fa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #0f172a;
+      color: #94a3b8;
+    }
+
+    @keyframes heroEntrance{
+
+  0%{
+    opacity:0;
+    transform:
+    translateX(-100px)
+    scale(.95);
+  }
+
+  100%{
+    opacity:1;
+    transform:
+    translateX(0)
+    scale(1);
+  }
+
+}
+
+  .reveal{
+
+  opacity:0;
+
+  transform:
+  translateY(60px)
+  scale(.95);
+
+  transition:
+  1s ease;
+
+}
+
+.reveal.active{
+
+  opacity:1;
+
+  transform:
+  translateY(0)
+  scale(1);
+
+}
+
+    @media(max-width: 900px) {
+      .navbar {
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .section {
+        padding: 100px 20px;
+      }
+    }
+
+
+    .cursor-glow{
+
+  position:fixed;
+
+  width:300px;
+  height:300px;
+
+  border-radius:50%;
+
+  background:
+  rgba(37,99,235,.15);
+
+  filter:blur(100px);
+
+  pointer-events:none;
+
+  z-index:-1;
+
+}
+
+.hotel-card{
+
+    background:white;
+    color:#0f172a;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.08);
+
+    max-width:280px;
+
+    margin:auto;
+}
+
+.hotel-card img{
+
+    width:100%;
+
+    height:170px;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.hotel-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 15px 35px rgba(37,99,235,.18);
+}
+
+.hotel-card:hover img{
+
+    transform:scale(1.05);
+}
+
+.hotel-card .card-content{
+
+    padding:15px;
+}
+
+.hotel-card h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+}
+
+.hotel-card p{
+
+    font-size:13px;
+
+    color:#64748b;
+
+    line-height:1.5;
+}
+
+
+
+.card,
+.hotel-card{
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,.2);
+}
+
+
+
+.rooms{
+    display:block;
+    margin-top:8px;
+    font-size:13px;
+    color:#22c55e;
+}
+
+.hotel-city{
+    margin-top:8px;
+    font-size:14px;
+    color:#64748b;
+}
+
+
+.search-hotel{
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+margin-bottom:30px;
+font-size:16px;
+}
+
+.hotel-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.hotel-features span{
+
+    font-size:11px;
+
+    padding:4px 8px;
+
+    border-radius:15px;
+}
+
+.review-box{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.review-box input,
+.review-box select,
+.review-box textarea{
+padding:15px;
+border:none;
+border-radius:12px;
+}
+
+.review-box textarea{
+height:120px;
+resize:none;
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:#0f172a;
+color:white;
+margin-top:50px;
+}
+
+
+
+.price{
+    font-size:16px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+.reserve-btn{
+  border:none;
+  background:linear-gradient(
+      135deg,
+      #2563eb,
+      #38bdf8
+  );
+
+  color:white;
+  padding:12px 25px;
+  border-radius:30px;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.reserve-btn:hover{
+  transform:translateY(-3px);
+}
+
+
+.reservation-box{
+
+  max-width:700px;
+  margin:auto;
+  gap:20px;
+  background:white;
+  padding:40px;
+  border-radius:30px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+}
+
+.reservation-box input,
+.reservation-box select{
+
+    padding:15px;
+
+    border:1px solid #dbeafe;
+
+    border-radius:12px;
+
+    font-size:16px;
+}
+
+.reservation-box button{
+
+  background:#2563eb;
+
+  color:white;
+
+  border:none;
+
+  padding:15px;
+
+  border-radius:15px;
+
+  cursor:pointer;
+
+}
+
+
+#reservationMessage{
+
+    text-align:center;
+
+    font-weight:bold;
+
+    margin-top:10px;
+}
+
+
+#aiResult{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.08);
+
+    font-size:18px;
+
+    text-align:center;
+}
+
+  </style>
+</head>
+<body>
+<div class="cursor-glow"></div>
+  <nav class="navbar">
+    <div class="logo">Morocco Travel</div>
+
+    <div class="nav-links">
+    <a href="#destinations" id="nav-destinations">Destinations</a>
+<a href="#hotels" id="nav-hotels">Hotels</a>
+<a href="#converter" id="nav-converter">Converter</a>
+
+      <select class="language-select" id="language">
+        <option>English</option>
+        <option>Français</option>
+        <option>العربية</option>
+      </select>
+
+      <select class="currency-select" id="currency">
+        <option>MAD</option>
+        <option>USD</option>
+        <option>EUR</option>
+      </select>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 id="hero-title">Discover Morocco</h1>
+      <p id="hero-text">Explore magical destinations, luxury hotels and unforgettable experiences.</p>
+      <button id="explore-btn" onclick="scrollToSection()">
+Explore Now
+</button>
+  </section>
+
+  <section class="section reveal" id="destinations">
+   <h2 class="section-title" id="destinations-title">
+Top Destinations
+</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="marakech.jpeg">
+
+        <div class="card-content">
+          <h3 id="card1-title" data-key="marrakechTitle">
+           Marrakech
+       </h3>
+          <p id="card1-text" data-key="marrakechText">
+          Discover the beauty of Marrakech with luxury riads and magical souks</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="chefchaoune.jpeg">
+
+        <div class="card-content" >
+         <h3 data-key="chefchaouenTitle">Chefchaouen</h3>
+<p data-key="chefchaouenText">The blue pearl of Morocco with incredible mountain views.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="sahara1.jpeg">
+
+        <div class="card-content">
+          <h3  data-key="saharaTitle">Sahara</h3>
+          <p data-key="saharaText">Enjoy unforgettable nights under the stars in the Moroccan desert.</p>
+        </div>
+      </div>
+
+      
+
+      <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="taghazout.jpeg">
+
+        <div class="card-content">
+          <h3 data-key="taghazoutTitle">Taghazout</h3>
+          <p data-key="taghazoutText">Taghazout, pearl of the Moroccan Atlantic coast, where the ocean meets the serenity of the mountains and the spirit of surfing</p>
+        </div>
+      </div>
+
+
+       <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="agadir.jpeg">
+
+        <div class="card-content">
+          <h3 data-key="agadirTitle">Agadir</h3>
+          <p  data-key="agadirText">Agadir is the seaside pearl of southern Morocco: a modern and dynamic city bathed in sun all year round, famous for its large cornice, its impressive fortress of Agadir Oufella and its long golden sand beaches</p>
+        </div>
+      </div>
+
+
+
+
+      <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="mosque mark.jpeg">
+
+        <div class="card-content">
+          <h3 data-key="marrakechTitle1">Marrakech</h3>
+          <p data-key="marrakechText1">The Koutoubia Mosque is the largest religious building and the emblematic symbol of Marrakech. Erected in the 12th century, this marvel of Almohad architecture is distinguished by the sobriety and harmony of its style. Its imposing minaret, culminating at nearly 77 meters, serves as a visual landmark throughout the city.</p>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="casa.jpeg">
+
+        <div class="card-content">
+          <h3 data-key="casablancaTitle">Casablanca</h3>
+          <p   data-key="casablancaText">Economic capital of Morocco, Casablanca is the largest metropolis in the country and the Maghreb. Located on the Atlantic coast, this cosmopolitan city of nearly \(4\) million inhabitants combines economic dynamism, Art Deco architecture and cultural heritage.</p>
+        </div>
+      </div>
+
+
+
+
+    <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="fez.jpeg">
+
+        <div class="card-content">
+        <h3 data-key="fezTitle1">Fez</h3>
+<p data-key="fezText1">Lamps, medina fez.............</p>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="fez2.jpeg">
+
+        <div class="card-content">
+          <h3 data-key="fezTitle">Fez</h3>
+          <p data-key="fezText">Fez is the spiritual and cultural capital of Morocco. Located about 180 km east of Rabat, the city is famous for its historic medina, Fez el-Bali (classified by UNESCO), and for home to Al Quariawiyyin University, one of the oldest universities in the world still in operation.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="agadir 2.jpeg">
+
+        <div class="card-content">
+          <h3 data-key="agadirTitle">Agadir</h3>
+          <p data-key="agadirText">The sunset in Agadir (Morocco) is a magnificent natural spectacle on the Atlantic Ocean</p>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')">❤</div>
+<span class="badge">Popular</span>
+        <img src="amazigh.jpeg">
+
+        <div class="card-content">
+         <h3 data-key="amazighTitle">Amazigh</h3>
+          <p data-key="amazighText">The Amazighs (often called Berbers) are the indigenous peoples of North Africa, representing a fundamental part of Morocco's identity. The term Amazigh means "free man" in their language, Tamazight</p>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="favorite" onclick="toggleFavorite(this,'${hotel.name}')" >❤</div>
+<span class="badge">Popular</span>
+        <img src="nador.jpeg">
+
+        <div class="card-content">
+         <h3 data-key="nadorTitle">Nador</h3>
+          <p  data-key="nadorText">Nador is a large coastal city in northeastern Morocco, ideally located in the Rif region on the Mediterranean Sea. It is located in the heart of the second largest lagoon in the Mediterranean, the Mar Chica. Cradle of Amazigh (Berber) culture, Nador has transformed into a dynamic economic center, driven by trade, port infrastructure and tourism development focused on ecology.</p>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+<!-- HOTELS -->
+<section class="section reveal" id="hotels">
+<h2 class="section-title" id="hotels-title">
+Luxury Hotels
+</h2>
+
+    <input
+    type="text"
+    id="searchHotel"
+    class="search-hotel"
+    placeholder="🔍 Search by city or hotel name">
+
+    <div id="hotels-container" class="hotel-grid">
+
+    </div>
+
+</section>
+
+
+<!-- RESERVATION -->
+<section class="section" id="reservation">
+<h2 class="section-title" id="reservation-title">
+Hotel Reservation
+</h2>
+  
+
+    <div class="reservation-box">
+
+        <input
+        type="text"
+        id="fullname"
+        placeholder="Full Name">
+
+        <input
+        type="email"
+        id="email"
+        placeholder="Email">
+
+        <select id="hotel">
+        </select>
+
+        <input
+        type="date"
+        id="checkin">
+
+        <input
+        type="date"
+        id="checkout">
+
+        <input
+        type="number"
+        id="guests"
+        placeholder="Guests">
+        <button id="reserve-btn" onclick="reserveHotel()">
+Confirm Reservation
+</button>
+
+        <div id="reservationMessage"></div>
+
+    </div>
+
+</section>
+
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+<h2 class="section-title" id="reviews-title">
+Reviews
+</h2>
+
+    <div class="review-box">
+
+        <input
+        type="text"
+        id="reviewName"
+        placeholder="Your Name">
+<select id="reviewHotel">
+</select>
+        <select id="reviewStars">
+
+            <option value="5">⭐⭐⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="1">⭐</option>
+
+        </select>
+
+        <textarea
+        id="reviewText"
+        placeholder="Write your review">
+        </textarea>
+          <button id="review-btn" onclick="addReview()">
+Add Review
+</button>
+       
+
+        <div id="reviewsContainer"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONVERTER -->
+<section class="section reveal" id="converter">
+
+  <h2 class="section-title" id="converter-title">
+Currency Converter
+</h2>  
+
+    <div class="price-box">
+
+        <h2>
+            Convert MAD to USD
+        </h2>
+
+        <input
+        type="number"
+        id="madInput"
+        placeholder="Enter amount in MAD">
+      <button id="convert-btn" onclick="convertCurrency()">
+Convert
+</button>
+
+        <div
+        class="result"
+        id="result">
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>
+        Tourism Maroc
+    </h3>
+
+    <p>
+        Discover Morocco's best destinations,
+        hotels and experiences.
+    </p>
+
+    <p>
+        📧 tourismmaroc@gmail.com
+    </p>
+
+    <p>
+        📞 +212 600000000
+    </p>
+
+    <p>
+        📍 Morocco
+    </p>
+
+</footer>
+
+
+  <script>
+
+    function scrollToSection() {
+      document.getElementById('destinations').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    
+
+    // LANGUAGE
+    const language = document.getElementById('language');
+
+    language.addEventListener('change', () => {
+
+      if(language.value === 'Français') {
+
+document.getElementById('hero-title').innerText =
+'Découvrir le Maroc';
+
+document.getElementById('hero-text').innerText =
+'Explorez les meilleures destinations du Maroc';
+
+document.getElementById('nav-destinations').innerText =
+'Destinations';
+
+document.getElementById('nav-hotels').innerText =
+'Hôtels';
+
+document.getElementById('nav-converter').innerText =
+'Convertisseur';
+
+document.getElementById('destinations-title').innerText =
+'Destinations populaires';
+
+document.getElementById('hotels-title').innerText =
+'Hôtels de luxe';
+
+document.getElementById('reservation-title').innerText =
+'Réservation hôtel';
+
+document.getElementById('reviews-title').innerText =
+'Avis clients';
+
+document.getElementById('converter-title').innerText =
+'Convertisseur de devises';
+
+document.getElementById('explore-btn').innerText =
+'Explorer';
+
+document.getElementById('reserve-btn').innerText =
+'Confirmer réservation';
+
+document.getElementById('review-btn').innerText =
+'Ajouter avis';
+
+document.getElementById('convert-btn').innerText =
+'Convertir';
+
+document.getElementById('card1-title').innerText =
+'Marrakech';
+
+document.getElementById('card1-text').innerText =
+'Découvrez la beauté de Marrakech avec ses riads luxueux et ses souks magiques';
+
+}
+
+else if(language.value === 'العربية') {
+
+document.getElementById('hero-title').innerText =
+'اكتشف المغرب';
+
+document.getElementById('hero-text').innerText =
+'استكشف أفضل الوجهات السياحية في المغرب';
+
+document.getElementById('nav-destinations').innerText =
+'الوجهات';
+
+document.getElementById('nav-hotels').innerText =
+'الفنادق';
+
+document.getElementById('nav-converter').innerText =
+'محول العملات';
+
+document.getElementById('destinations-title').innerText =
+'أفضل الوجهات';
+
+document.getElementById('hotels-title').innerText =
+'فنادق فاخرة';
+
+document.getElementById('reservation-title').innerText =
+'حجز فندق';
+
+document.getElementById('reviews-title').innerText =
+'آراء الزبناء';
+
+document.getElementById('converter-title').innerText =
+'محول العملات';
+
+document.getElementById('explore-btn').innerText =
+'استكشف';
+
+document.getElementById('reserve-btn').innerText =
+'تأكيد الحجز';
+
+document.getElementById('review-btn').innerText =
+'إضافة تقييم';
+
+document.getElementById('convert-btn').innerText =
+'تحويل';
+
+document.getElementById('card1-title').innerText =
+'مراكش';
+
+document.getElementById('card1-text').innerText =
+'اكتشف جمال مدينة مراكش برياضاتها الفاخرة وأسواقها الساحرة';
+
+}
+
+else {
+
+document.getElementById('hero-title').innerText =
+'Discover Morocco';
+
+document.getElementById('hero-text').innerText =
+'Explore magical destinations, luxury hotels and unforgettable experiences.';
+
+document.getElementById('nav-destinations').innerText =
+'Destinations';
+
+document.getElementById('nav-hotels').innerText =
+'Hotels';
+
+document.getElementById('nav-converter').innerText =
+'Converter';
+
+document.getElementById('destinations-title').innerText =
+'Top Destinations';
+
+document.getElementById('hotels-title').innerText =
+'Luxury Hotels';
+
+document.getElementById('reservation-title').innerText =
+'Hotel Reservation';
+
+document.getElementById('reviews-title').innerText =
+'Reviews';
+
+document.getElementById('converter-title').innerText =
+'Currency Converter';
+
+document.getElementById('explore-btn').innerText =
+'Explore Now';
+
+document.getElementById('reserve-btn').innerText =
+'Confirm Reservation';
+
+document.getElementById('review-btn').innerText =
+'Add Review';
+
+document.getElementById('convert-btn').innerText =
+'Convert';
+
+document.getElementById('card1-title').innerText =
+'Marrakech';
+
+document.getElementById('card1-text').innerText =
+'Discover the beauty of Marrakech with luxury riads and magical souks.';
+
+}
+
+});
+
+    // CONVERTER
+    function convertCurrency() {
+
+      const mad = document.getElementById('madInput').value;
+
+      const usd = mad * 0.10;
+
+      document.getElementById('result').innerText = usd.toFixed(2) + ' USD';
+    }
+
+    // SCROLL ANIMATION
+    window.addEventListener('scroll', reveal);
+
+    function reveal() {
+
+      const reveals = document.querySelectorAll('.reveal');
+
+      reveals.forEach(section => {
+
+        const windowHeight = window.innerHeight;
+
+        const revealTop = section.getBoundingClientRect().top;
+
+        if(revealTop < windowHeight - 100) {
+          section.classList.add('active');
+        }
+      });
+    }
+
+  </script>
+<script src="script.js"></script>
+</body>
+</html>
