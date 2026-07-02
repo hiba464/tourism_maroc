@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Create Account </h1>
+
+            <p>Start your luxury travel experience</p>
+
+            <form autocomplete="off">
+
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="Name"
+                    autocomplete="off">
+
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="Email"
+                    autocomplete="off">
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Password"
+                    autocomplete="new-password">
+
+                <button
+                    type="button"
+                    onclick="register()">
+                    Register
+                </button>
+
+            </form>
+
+            <a href="login.html">
+                Already have account?
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="auth.js"></script>
+
+</body>
+</html>
