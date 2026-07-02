@@ -1,3 +1,6 @@
+
+
+
 import tkinter as tk
 from app.main_window import MainWindow
 
@@ -11,5 +14,6 @@ if __name__ == "__main__":
     app = MainWindow(root)
 
     print("STEP 3 - MAINWINDOW CREATED")
+
 
     root.mainloop()
